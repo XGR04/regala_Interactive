@@ -224,7 +224,7 @@ function mousePressed() {
           }
         }
       }
-      console.log("Crops watered!");
+      console.log("Crops watered!"); //logs msg after
       return;
     }
   }
