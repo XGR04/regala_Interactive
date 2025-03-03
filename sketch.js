@@ -3,7 +3,7 @@ let cols = 5;
 let cellSize = 25;
 let startX = 200;
 let startY = 230;
-let gridStates = [];
+let gridStates = [];//easier for future changes
 
 let playerX = 100;
 let playerY = 250;
@@ -210,7 +210,7 @@ function mousePressed() {
   if (isAllPlanted()) {
     let farmlandCenterX = startX + (cols * cellSize) / 2;
     let farmlandTopY = startY;
-    let baseOffset = 30;
+    let baseOffset = 30; //positioning of waterdrop
     let dropY = farmlandTopY - baseOffset;
     let left = farmlandCenterX - 10;
     let right = farmlandCenterX + 10;
