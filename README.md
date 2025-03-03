@@ -1,2 +1,0 @@
-# regala_Interactive
- 
