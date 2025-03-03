@@ -6,8 +6,57 @@
     <title>regala_Interactive</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.min.js"></script>
     <script src="sketch.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5dc;
+        }
+        h1 {
+            color: #333;
+        }
+        .instructions {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+        .controls {
+            font-weight: bold;
+            color: #444;
+        }
+    </style>
 </head>
 <body>
-  
+
+    <h1>Regala Interactive Farming</h1>
+    <div class="instructions">
+        <h2>How to Play</h2>
+        <p>Welcome to your interactive farming experience! Follow these steps to grow and harvest crops:</p>
+
+        <h3>🎮 Controls:</h3>
+        <ul>
+            <li><span class="controls">WASD</span> - Move the player.</li>
+            <li><span class="controls">Mouse Click</span> - Interact with the farm.</li>
+            <li><span class="controls">S (at the door)</span> - Sleep to advance time.</li>
+        </ul>
+
+        <h3>🌱 Gameplay Steps:</h3>
+        <ol>
+            <li>Click on a farmland plot to <b>plant seeds</b>.</li>
+            <li>Once all plots are planted, click the <b>water drop</b> to <b>water them</b>.</li>
+            <li>After watering, an <b>arrow will point to the house</b> – go inside!</li>
+            <li>Stand at the door and press <b>S</b> to sleep.</li>
+            <li>After the required days, crops will become <b>ready to harvest</b>.</li>
+            <li>Click on the crops to <b>harvest them</b>!</li>
+        </ol>
+
+        <p>Keep growing and collecting crops to continue farming! 🌾👨‍🌾</p>
+    </div>
+
 </body>
 </html>
