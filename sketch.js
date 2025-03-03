@@ -13,10 +13,6 @@ let dayCount = 0;
 let requiredDays = 3;
 let cropsCollected = 0;
 
-if (isFarmReadyForSleep()) {
-  drawArrowToHouse();
-}
-
 function setup() {
   createCanvas(400, 400);
   for (let i = 0; i < rows; i++) {
@@ -209,7 +205,6 @@ function isFarmReadyForSleep() {
   }
   return true;
 }
-
 
 function mousePressed() {
   if (isAllPlanted()) {
