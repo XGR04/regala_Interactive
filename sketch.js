@@ -42,27 +42,6 @@ function draw() {
   displayStats();
 }
 
-function controls() {
-  fill(255);
-  textSize(14);
-  textAlign(LEFT, BOTTOM);
-  text("W", 30, height - 50);
-  text("A  S  D", 15, height - 30);
-
-  fill(0);
-  rect(28, height - 65, 18, 18, 5); // W
-  rect(10, height - 45, 18, 18, 5); // A
-  rect(30, height - 45, 18, 18, 5); // S
-  rect(50, height - 45, 18, 18, 5); // D
-
-  fill(255);
-  textAlign(CENTER, CENTER);
-  text("W", 37, height - 56);
-  text("A", 19, height - 36);
-  text("S", 39, height - 36);
-  text("D", 59, height - 36);
-}
-
 function house() {
   fill('#e84a4a');
   rect(50, 100, 120, 80);
