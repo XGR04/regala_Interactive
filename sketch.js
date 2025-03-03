@@ -50,10 +50,10 @@ function controls() {
   text("A  S  D", 15, height - 30);
 
   fill(0);
-  rect(28, height - 65, 18, 18, 5);
-  rect(10, height - 45, 18, 18, 5);
-  rect(30, height - 45, 18, 18, 5);
-  rect(50, height - 45, 18, 18, 5);
+  rect(28, height - 65, 18, 18, 5); // W
+  rect(10, height - 45, 18, 18, 5); // A
+  rect(30, height - 45, 18, 18, 5); // S
+  rect(50, height - 45, 18, 18, 5); // D
 
   fill(255);
   textAlign(CENTER, CENTER);
@@ -73,18 +73,6 @@ function house() {
   
   fill('#a64b3f');
   rect(90, 140, 40, 40);
-}
-
-function drawArrowToHouse() {
-  let arrowX = 110;
-  let arrowY = 210; 
-
-  fill('red');
-  triangle(
-    arrowX, arrowY,          // Tip
-    arrowX - 10, arrowY + 20, // Left corner
-    arrowX + 10, arrowY + 20 
-  );
 }
 
 function farmland() {
