@@ -7,11 +7,15 @@ let gridStates = [];
 
 let playerX = 100;
 let playerY = 250;
-let moveSpeed = 12;
+let moveSpeed = 20;
 
 let dayCount = 0;
 let requiredDays = 3;
 let cropsCollected = 0;
+
+if (isFarmReadyForSleep()) {
+  drawArrowToHouse();
+}
 
 function setup() {
   createCanvas(400, 400);
@@ -26,19 +30,40 @@ function setup() {
 function draw() {
   strokeWeight(0.2);
   background('#7ac74f');
-  drawHouse();
-  drawFarmland();
+  house();
+  farmland();
   
   if (isAllPlanted()) {
     waterDrop();
   }
   
-  drawPlayer();
+  player();
   displaySleepMsg();
   displayStats();
 }
 
-function drawHouse() {
+function controls() {
+  fill(255);
+  textSize(14);
+  textAlign(LEFT, BOTTOM);
+  text("W", 30, height - 50);
+  text("A  S  D", 15, height - 30);
+
+  fill(0);
+  rect(28, height - 65, 18, 18, 5);
+  rect(10, height - 45, 18, 18, 5);
+  rect(30, height - 45, 18, 18, 5);
+  rect(50, height - 45, 18, 18, 5);
+
+  fill(255);
+  textAlign(CENTER, CENTER);
+  text("W", 37, height - 56);
+  text("A", 19, height - 36);
+  text("S", 39, height - 36);
+  text("D", 59, height - 36);
+}
+
+function house() {
   fill('#e84a4a');
   rect(50, 100, 120, 80);
   
@@ -50,7 +75,19 @@ function drawHouse() {
   rect(90, 140, 40, 40);
 }
 
-function drawFarmland() {
+function drawArrowToHouse() {
+  let arrowX = 110;
+  let arrowY = 210; 
+
+  fill('red');
+  triangle(
+    arrowX, arrowY,          // Tip
+    arrowX - 10, arrowY + 20, // Left corner
+    arrowX + 10, arrowY + 20 
+  );
+}
+
+function farmland() {
   for (let i = 0; i < rows; i++) {
     for (let j = 0; j < cols; j++) {
       let x = startX + j * cellSize;
@@ -82,7 +119,7 @@ function drawFarmland() {
   }
 }
 
-function drawPlayer() {
+function player() {
   fill('darkblue');
   rect(playerX, playerY, 15, 25, 10);
   fill('salmon');
@@ -171,7 +208,7 @@ function keyPressed() {
   }
   if (key === 's' || key === 'S') {
     if (isPlayerAtDoor()) {
-      if (isFarmEmpty() || isAllHarvestable()) {
+      if (isFarmEmpty() || isAllHarvestable() || !isFarmReadyForSleep()) {
         playerY += moveSpeed;
       } else {
         dayCount++;
@@ -194,6 +231,18 @@ function keyPressed() {
     playerX += moveSpeed;
   }
 }
+
+function isFarmReadyForSleep() {
+  for (let i = 0; i < rows; i++) {
+    for (let j = 0; j < cols; j++) {
+      if (gridStates[i][j] === 1 || gridStates[i][j] === 0) {
+        return false;
+      }
+    }
+  }
+  return true;
+}
+
 
 function mousePressed() {
   if (isAllPlanted()) {
