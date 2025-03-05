@@ -18,7 +18,7 @@ function setup() {
   for (let i = 0; i < rows; i++) {
     gridStates[i] = [];
     for (let j = 0; j < cols; j++) {
-      gridStates[i][j] = 0;
+      gridStates[i][j] = 0;//default
     }
   }
 }
